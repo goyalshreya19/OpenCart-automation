@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Automation Suite" preserve-order="true">
+
+    <test name="Tests">
+        <classes>
+            <class name="HomePageTest"/>
+            <class name="LoginPageTest"/>
+            <class name="ProductPageTest"/>
+            <class name="CartPageTest"/>
+            <class name="CheckOutTest"/>
+        </classes>
+    </test>
+
+
+</suite>

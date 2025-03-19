@@ -2,31 +2,31 @@ package org.example.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage {
     private WebDriver driver;
+    private WebDriverWait wait;
 
     private By myAccountDropdown = By.xpath("//a[@title=\"My Account\"]");
     private By loginOption = By.xpath("//a[text()='Login']");
-    private By searchBox = By.name("search");
-    private By searchButton = By.cssSelector("button.btn.btn-default.btn-lg");
 
-
-    public HomePage(WebDriver driver){
+    public HomePage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize here
     }
 
-    public void clickMyAccount(){
-        driver.findElement(myAccountDropdown).click();
+    public void clickMyAccount() {
+        WebElement myAccountElement = wait.until(ExpectedConditions.elementToBeClickable(myAccountDropdown));
+        myAccountElement.click();
     }
 
-    public void selectLogin(){
-        driver.findElement(loginOption).click();
+    public void selectLogin() {
+        WebElement loginElement = wait.until(ExpectedConditions.elementToBeClickable(loginOption));
+        loginElement.click();
     }
-
-    public void searchProduct(){
-        driver.findElement(searchBox).sendKeys(productName);
-        driver.findElement(searchButton).click();
-    }
-
 }
