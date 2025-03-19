@@ -19,6 +19,7 @@ public class Base {
     public void teardown(){
         if(driver != null){
             driver.quit();
+            //closes the window
         }
     }
 }
