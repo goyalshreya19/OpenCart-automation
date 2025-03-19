@@ -16,7 +16,7 @@ public class CheckOutPage {
 
     public CheckOutPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize here
     }
 
     public boolean ischeckout(){
